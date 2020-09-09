@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1599679244 source:c:\gog games\carpeta git\programacion_1_laboratorio_1\trabajo-practico-1-\trabajo-practico-1-\funciones.c
+	"Nuebo.h"
+
+1599679244 c:\gog games\carpeta git\programacion_1_laboratorio_1\trabajo-practico-1-\trabajo-practico-1-\nuebo.h
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+
+1599686544 source:c:\gog games\carpeta git\programacion_1_laboratorio_1\trabajo-practico-1-\trabajo-practico-1-\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Nuebo.h"
+
