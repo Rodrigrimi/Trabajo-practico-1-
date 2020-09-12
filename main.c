@@ -1,18 +1,4 @@
-/******************************************************************************
-
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
-
 #include "Nuebo.h"
-
-
-
-
-
 int main()
 {
     float resDivision;
@@ -28,18 +14,13 @@ int main()
     {
         MostrarMenu(numeroIngradoA,numeroIngradoB);
         opcionA=CargarNumeros(opcionA);
-
         switch(opcionA)
         {
         case 1:
-
             numeroIngradoA=CargarNumeros(numeroIngradoA);
-
             break;
         case 2:
-
             numeroIngradoB=CargarNumeros(numeroIngradoB);
-
             break;
         case 3:
             if(numeroIngradoB==0)
