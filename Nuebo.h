@@ -27,8 +27,6 @@ float Divission(float,float);
  * \return retorna el resultado de la suma
  *
  */
-
-
 float SumarTotales(float,float);
 /** \brief Calcula la resta retornando su resultado
  *
@@ -38,7 +36,6 @@ float SumarTotales(float,float);
  * \return retorna el resultado de la resta
  *
  */
-
 float RestarTotales(float,float);
 /** \brief Calcula la multiplicacion retornando su resultado
  *
@@ -64,6 +61,4 @@ float CargarNumeros(float);
  * \return retorna el resultado es mostrar el menu por pantalla
  *
  */
-
 void MostrarMenu(float,float );
-
