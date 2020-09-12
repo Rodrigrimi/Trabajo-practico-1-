@@ -1,54 +1,75 @@
 #include "Nuebo.h"
 
-int CalcularFactorial(float);
-float Divission(float,float);
-float SumarTotales(float,float);
-float RestarTotales(float,float);
-float MultiplicarTotales(float,float);
 
-
-
-int CalcularFactorial(float numero)
+void MostrarMenu(float numeroIngradoA,float numeroIngradoB)
 {
-    float resultado;
+    printf("1. Ingresar 1er operando (A=%.2f) \n",numeroIngradoA);
+    printf("2. Ingresar 2do operando (B=%.2f) \n",numeroIngradoB);
+    printf("3- Calcular todas las operaciones \n");
+    printf("4- Informar resultados \n");
+    printf("5- Salir \n");
+    printf("\n");
+}
 
-    if(numero == 0)
+float CargarNumeros(float numeros)
+{
+    printf("Ingrese un numero: ");
+    fflush(stdin);
+    scanf("%f", &numeros);
+    printf("\n");
+    return numeros;
+}
+
+int CalcularFactorial (float number)
+{
+
+    int factorial;
+    int returnValue;
+    long int factor = 1;
+
+    if (number== (int) number && number>=0)
     {
-        resultado = 1;
+        for (factorial = number; factorial > 0; factorial--)
+        {
+            factor = factor * factorial;
+            returnValue=factor;
+        }
+    }
+    else if (number<0)
+    {
+        returnValue= -1;
     }
     else
     {
-         resultado = numero * CalcularFactorial(numero - 1);
+        returnValue= 0;
     }
-
-    return resultado;
+    return (returnValue);
 }
 
 float Divission(float numero,float divisor)
 {
     float resultado;
-    resultado=(float)numero/divisor;
-
+    resultado=numero/divisor;
     return resultado;
 }
 
 float SumarTotales(float numero, float acum)
 {
-    int suma;
+    float suma;
     suma=numero+acum;
     return suma;
 }
 
 float RestarTotales(float numero, float acum)
 {
-    int resta;
+    float resta;
     resta=numero-acum;
     return resta;
 }
 
 float MultiplicarTotales(float numero, float acum)
 {
-    long long int multiplicaNumero;
+    long int multiplicaNumero;
     multiplicaNumero=numero*acum;
     return multiplicaNumero;
 }

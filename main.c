@@ -1,5 +1,12 @@
-#include <stdio.h>
-#include <stdlib.h>
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+
 #include "Nuebo.h"
 
 
@@ -8,89 +15,88 @@
 
 int main()
 {
-    char numeroIngresado[1];
-    int validoNumero;
-    float transformaNumeroUno;
-    float transformaNumeroDos;
     float resDivision;
-    int resSuma;
-    int resResta;
-    int resMultiplicacion;
-    int resFactorial;
-    char respuesta;
-    char opcionA;
-
-
+    float resSuma;
+    float resResta;
+    float resMultiplicacion;
+    long int resFactorial;
+    long int resFactorial2;
+    float numeroIngradoA=0;
+    float numeroIngradoB=0;
+    int opcionA;
     do
     {
-        printf("1- Ingresar el primer numero a calcular \n");
-        printf("2- Ingresar el segundo numero a calcular \n");
-        printf("3- Calcular todas las operaciones \n");
-        printf("4- Informar resultados \n");
-        printf("5- Salir \n");
-        scanf("%c", &opcionA);
-        while(opcionA!='1' || opcionA!='2')
-        {
-            printf("No hay datos Ingresados");
-            printf("1- Ingresar el primer numero a calcular \n");
-            printf("2- Ingresar el segundo numero a calcular \n");
-            fflush(stdin);
-            scanf("%c", &opcionA);
-        }
+        MostrarMenu(numeroIngradoA,numeroIngradoB);
+        opcionA=CargarNumeros(opcionA);
+
         switch(opcionA)
         {
-            case '1':
+        case 1:
 
-                    transformaNumeroUno;
-                break;
-            case '2':
+            numeroIngradoA=CargarNumeros(numeroIngradoA);
 
-                break;
-            case '3':
+            break;
+        case 2:
 
+            numeroIngradoB=CargarNumeros(numeroIngradoB);
 
+            break;
+        case 3:
+            if(numeroIngradoB==0)
+            {
+                printf("No se puede Calcular si no ha cargado datos\n");
+            }
+            else
+            {
+                printf("\t\tExito al calcular las operaciones\n\n\n");
+                resDivision=Divission(numeroIngradoA,numeroIngradoB);
+                resSuma=SumarTotales(numeroIngradoA,numeroIngradoB);
+                resResta=RestarTotales(numeroIngradoA,numeroIngradoB);
+                resMultiplicacion=MultiplicarTotales(numeroIngradoA,numeroIngradoB);
+                resFactorial=CalcularFactorial(numeroIngradoA);
+                resFactorial2=CalcularFactorial(numeroIngradoB);
+            }
+            break;
+        case 4:
+            printf ("\nEl resultado de A+B es:: %.2f\n",resSuma);
+            printf ("\nEl resultado de A+B es:: %.2f\n",resSuma);
+            printf ("\nEl resultado de A-B es:  %.2f\n",resResta);
+            printf ("\nEl resultado de la A*B es: %.2f\n",resMultiplicacion);
+            if(numeroIngradoB==0)
+            {
+                printf("\nNo es posible dividir por cero\n");
+            }
+            else
+            {
+                printf ("\nEl resultado de A/B es: %.2f\n",resDivision);
+            }
 
-                break;
-            case '4':
-                printf ("El resultado de la SUMA es: %d\n",resSuma);
-                printf ("El resultado de la RESTA es: %d\n",resResta);
-                printf ("El resultado de la DIVISION es: %d\n",resDivision);
-                printf ("El resultado de la MULTIPLICACION es: %d\n",resMultiplicacion);
-                printf ("El resultado de la CALCULO FACTORIAL DEL PRIMER NUMERO es: %d\n",resFactorial);
-                printf ("El resultado de la CALCULO FACTORIAL DEL SEGUNDO NUMERO es: %d\n",resFactorial);
-                break;
-            default:
-                printf("Desea continuar cargando los datos; s/n \n ", respuesta);
-                fflush(stdin);
-                scanf("%c",&respuesta);
-                break;
-
-        }
-
-    }while(respuesta=='s');
-
-
-
-    return 0;
-
-}
-
-/*
-void ValidarNumero(char numero[])
-
-{
-    int i;
-    int retorno;
-    retorno =1;
-    for(i=0;i<strlen(numero);i++)
-    {
-        if(!(isdigit(numero[i])))
-        {
-            printf("Ingrese solamente NUMEROS:  \n");
-            getch();
-            retorno=0;
-            return retorno;
+            if(numeroIngradoA== (int) numeroIngradoA && numeroIngradoA>=0)
+            {
+                printf ("\nEl factorial de A es: %ld ",resFactorial);
+            }
+            else
+            {
+                printf("\nNo se puede realizar el factorial de un numero negativo y decimal\n");
+            }
+             if(numeroIngradoB== (int) numeroIngradoB && numeroIngradoB>=0)
+            {
+                printf ("y El factorial de B es: %ld \n",resFactorial2);
+            }
+            else
+            {
+                printf("\nNo se puede realizar el factorial de un numero negativo y decimal\n");
+            }
+            break;
+        case 5:
+            printf("\t\tGracias por usar la calculadora\n");
+            break;
+        default:
+            printf("\t\tSe genero un error ingrese nuevamente\n");
+            MostrarMenu(numeroIngradoA,numeroIngradoB);
+            break;
         }
     }
-    return retorno;
-}*/
+    while(opcionA!=5);
+    return 0;
+}
