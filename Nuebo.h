@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include<ctype.h>
+
 /** \brief Calcula el factiorial retornando su resultado
  *
  * \param recibe como  parametro el numero a calcular
