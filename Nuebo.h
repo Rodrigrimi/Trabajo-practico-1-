@@ -9,7 +9,8 @@
  * \return retorna el resultado del A!
  *
  */
-int CalcularFactorial(float);
+long int CalcularFactorial(float);
+long int CalcularFactorial2(float);
 /** \brief Calcula la division retornando su resultado
  *
  * \param recibe como  parametro el dividendo a calcular

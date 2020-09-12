@@ -1,18 +1,4 @@
-/******************************************************************************
-
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
-
 #include "Nuebo.h"
-
-
-
-
-
 int main()
 {
     float resDivision;
@@ -20,7 +6,7 @@ int main()
     float resResta;
     float resMultiplicacion;
     long int resFactorial;
-    long int resFactorial2;
+    int factorialB;
     float numeroIngradoA=0;
     float numeroIngradoB=0;
     int opcionA;
@@ -28,21 +14,16 @@ int main()
     {
         MostrarMenu(numeroIngradoA,numeroIngradoB);
         opcionA=CargarNumeros(opcionA);
-
         switch(opcionA)
         {
         case 1:
-
             numeroIngradoA=CargarNumeros(numeroIngradoA);
-
             break;
         case 2:
-
             numeroIngradoB=CargarNumeros(numeroIngradoB);
-
             break;
         case 3:
-            if(numeroIngradoB==0)
+            if(numeroIngradoB<=0&&numeroIngradoA<=0)
             {
                 printf("No se puede Calcular si no ha cargado datos\n");
             }
@@ -53,8 +34,14 @@ int main()
                 resSuma=SumarTotales(numeroIngradoA,numeroIngradoB);
                 resResta=RestarTotales(numeroIngradoA,numeroIngradoB);
                 resMultiplicacion=MultiplicarTotales(numeroIngradoA,numeroIngradoB);
-                resFactorial=CalcularFactorial(numeroIngradoA);
-                resFactorial2=CalcularFactorial(numeroIngradoB);
+                if(numeroIngradoA>=0 && numeroIngradoA == (int) numeroIngradoA)
+                {
+                    resFactorial=CalcularFactorial(numeroIngradoA);
+                }
+                if(numeroIngradoB>=0 && numeroIngradoB==(int) numeroIngradoB)
+                {
+                    resFactorial=CalcularFactorial(numeroIngradoB);
+                }
             }
             break;
         case 4:
@@ -79,9 +66,9 @@ int main()
             {
                 printf("\nNo se puede realizar el factorial de un numero negativo y decimal\n");
             }
-             if(numeroIngradoB== (int) numeroIngradoB && numeroIngradoB>=0)
+            if(numeroIngradoB== (int) numeroIngradoB && numeroIngradoB>=0)
             {
-                printf ("y El factorial de B es: %ld \n",resFactorial2);
+                printf ("y El factorial de B es: %d \n",factorialB);
             }
             else
             {
