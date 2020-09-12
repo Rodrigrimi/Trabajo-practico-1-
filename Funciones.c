@@ -1,6 +1,4 @@
 #include "Nuebo.h"
-
-
 void MostrarMenu(float numeroIngradoA,float numeroIngradoB)
 {
     printf("1. Ingresar 1er operando (A=%.2f) \n",numeroIngradoA);
@@ -10,7 +8,6 @@ void MostrarMenu(float numeroIngradoA,float numeroIngradoB)
     printf("5- Salir \n");
     printf("\n");
 }
-
 float CargarNumeros(float numeros)
 {
     printf("Ingrese un numero: ");
@@ -19,14 +16,11 @@ float CargarNumeros(float numeros)
     printf("\n");
     return numeros;
 }
-
 int CalcularFactorial (float number)
 {
-
     int factorial;
     int returnValue;
     long int factor = 1;
-
     if (number== (int) number && number>=0)
     {
         for (factorial = number; factorial > 0; factorial--)
@@ -45,28 +39,24 @@ int CalcularFactorial (float number)
     }
     return (returnValue);
 }
-
 float Divission(float numero,float divisor)
 {
     float resultado;
     resultado=numero/divisor;
     return resultado;
 }
-
 float SumarTotales(float numero, float acum)
 {
     float suma;
     suma=numero+acum;
     return suma;
 }
-
 float RestarTotales(float numero, float acum)
 {
     float resta;
     resta=numero-acum;
     return resta;
 }
-
 float MultiplicarTotales(float numero, float acum)
 {
     long int multiplicaNumero;
