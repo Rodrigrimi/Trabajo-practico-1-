@@ -1,4 +1,4 @@
-#include "Nuebo.h"
+
 void MostrarMenu(float numeroIngradoA,float numeroIngradoB)
 {
     printf("1. Ingresar 1er operando (A=%.2f) \n",numeroIngradoA);
